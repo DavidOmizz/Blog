@@ -17,6 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIRS = BASE_DIR / 'templates'
 STATIC_DIR = BASE_DIR / "static"
 MEDIA_ROOT = BASE_DIR / "media"
+STATIC_ROOT = '/home/Omizz/Blog/BlogSite/static'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -30,7 +31,11 @@ SECRET_KEY = 'django-insecure-=7-v!@ra^&bznlj6*@^fo*%$@s+u_gy8)@&)xevleh*w(8ay6s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
+ALLOWED_HOSTS = ["*"]
+=======
 ALLOWED_HOSTS = ['*']
+>>>>>>> b8e01ccff4f133b1d505870bfc570b2800aed4d1
 
 
 # Application definition
@@ -123,9 +128,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [ 
- STATIC_DIR, 
-] 
+STATICFILES_DIRS = [
+ STATIC_DIR,
+]
 
 
 MEDIA_URL = '/media/'
