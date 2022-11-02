@@ -9016,7 +9016,7 @@ textarea.form-control {
     position: relative; }
     .footer .footer-heading:after {
       position: absolute;
-      bottom: -4px;
+      bottom: -2px;
       left: 0;
       content: '';
       width: 40px;

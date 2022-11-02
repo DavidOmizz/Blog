@@ -3,13 +3,33 @@ from django.views import generic
 from .models import Post
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 
 
-class BlogList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+# class BlogList(generic.ListView):
+#     queryset = Post.objects.filter(status=1).order_by('-created_on')
+#     template_name = 'blog.html'
+#     context_object_name = 'blog_list'
+#     paginate_by = 6
+
+def BlogList (request):
     template_name = 'blog.html'
-    context_object_name = 'blog_list'
-    paginate_by = 6
+    blog_list = Post.objects.all()
+    page = request.GET.get('page', 1)
+    x = blog_list.count()
+    y = x/2
+    paginator = Paginator(blog_list,y) # Show 25 contacts per page.]
+    # page_number = request.GET.get('page')
+    # page_obj = paginator.get_page(page_number)
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+
+    return render(request, template_name, {"blog_list":blog_list, 'posts': posts})
 
 # class BlogDetail(generic.DetailView):
 #     model = Post
