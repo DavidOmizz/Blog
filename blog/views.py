@@ -17,7 +17,7 @@ def BlogList (request):
     blog_list = Post.objects.all()
     page = request.GET.get('page', 1)
     x = blog_list.count()
-    y = x/2
+    y = x/3
     paginator = Paginator(blog_list,y) # Show 25 contacts per page.]
     # page_number = request.GET.get('page')
     # page_obj = paginator.get_page(page_number)
