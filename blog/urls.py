@@ -6,5 +6,6 @@ from django.urls import path
 urlpatterns = [
     # path('', views.BlogList.as_view(), name='home'),
     path('', views.BlogList, name='home'),
+    # path('footer', views.Footer, name='home'),
     path('<slug:slug>/', views.post_detail, name ='blog_single'),
 ]

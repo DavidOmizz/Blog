@@ -1,37 +1,33 @@
-<!-- {% block sidebar %}
+{% block sidebar %}
 
 <style>
         .card{
             box-shadow: 0 16px 48px #E3E7EB;
+            
         }
-
+        .card-header{
+            background-color: blue;
+            color: #fff;
+        }
 </style>
 
-<div class="col-md-4 float-right mt-5 ">
-<div class="card my-4">
+<div class="col-md-4 float-right">
+<div class="card">
         <h5 class="card-header">Recent Post</h5>
-        {% if blogsides %}
-        {% for bg in blogsides %}
+        {% if blogside %}
+        {% for bg in blogside %}
     <div class="card-body">
-        <p class="card-text"> {{ bg.title }}</p>
-        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-        <a href="https://djangocentral.com/building-a-blog-application-with-django"
-           class="btn btn-danger">Know more!</a>
+        <p class="card-text"><a href="{% url 'blog_single' bg.slug  %}">{{ bg.title }}</a></p>
     </div>
     {% endfor %}
     {% endif %}
 </div>
 </div>
 
-{% endblock sidebar %} -->
+{% endblock sidebar %}
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,4 +63,4 @@
         </div>
         </div>
 </body>
-</html>
+</html> -->
