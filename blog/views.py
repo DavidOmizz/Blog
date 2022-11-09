@@ -15,6 +15,8 @@ from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 def BlogList (request):
     template_name = 'blog.html'
     blog_list = Post.objects.all()
+    # blog_list = Post.objects.filter(status=1).order_by('-created_on')
+    blog_latest = Post.objects.filter(status=1).order_by('-created_on')[:2]
     page = request.GET.get('page', 1)
     x = blog_list.count()
     y = x/3
@@ -29,15 +31,22 @@ def BlogList (request):
         posts = paginator.page(paginator.num_pages)
 
 
-    return render(request, template_name, {"blog_list":blog_list, 'posts': posts})
+    return render(request, template_name, {"blog_list":blog_list, 'posts': posts, 'blog_latest':blog_latest})
 
 # class BlogDetail(generic.DetailView):
 #     model = Post
 #     template_name = 'blog-single.html'
 #     context_object_name = 'blog_detail'
 
+# def Footer(request):
+#     template_name = 'base.html'
+#     footer_list = Post.objects.all()[:2]
+#     return render(request, template_name, {"footer_list":footer_list})
+
 def post_detail(request, slug):
     template_name = 'blog-single.html'
+    blog_latest = Post.objects.filter(status=1).order_by('-created_on')[:2]
+    blogside = Post.objects.all().order_by('-created_on')[:4]
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True)
     new_comment = None
@@ -58,7 +67,7 @@ def post_detail(request, slug):
     return render(request, template_name, {'post': post,
                                            'comments': comments,
                                            'new_comment': new_comment,
-                                           'comment_form': comment_form})
+                                           'comment_form': comment_form,"blogside":blogside, 'blog_latest':blog_latest})
 
 
 

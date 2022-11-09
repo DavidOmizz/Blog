@@ -3796,7 +3796,8 @@ input[type="button"].btn-block {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1.25rem; }
+  padding: 1rem; 
+}
 
 .card-title {
   margin-bottom: 0.75rem; }
@@ -3812,12 +3813,13 @@ input[type="button"].btn-block {
   text-decoration: none; }
 
 .card-link + .card-link {
-  margin-left: 1.25rem; }
+  margin-left: 1.25rem; 
+}
 
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
   .card-header:first-child {
     border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
@@ -9000,7 +9002,7 @@ textarea.form-control {
   position: relative;
   z-index: 0;
   overflow: hidden;
-  padding: 7em 0; }
+  padding: 2em 0; }
   .footer a {
     color: #207dff; }
   .footer p {
