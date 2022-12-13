@@ -63,8 +63,13 @@
 	          <!-- <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li> -->
 	          <!-- <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li> -->
 	          <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a class="nav-link"> <span class="fa fa-phone mr-1"></span></a></li>
+	          <!-- <li class="nav-item"><a class="nav-link"> <span class="fa fa-phone mr-1"></span></a></li> -->
 	        </ul>
+          <form action="{% url 'search_blogs' %}" method="get">
+            {% csrf_token %}
+            <input type="search" name="q" class="" style="border: 2px blue solid;border-radius: 5px; padding: px;" placeholder="search" aria-label="Search">
+            <button class="btn btn-primary" type="submit" style="padding: 7px;">Search</button>
+          </form>
 	      </div>
 	    </div>
 	  </nav>
