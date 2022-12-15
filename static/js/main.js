@@ -185,3 +185,53 @@
 
 })(jQuery);
 
+
+const date = document.getElementById('dated')
+
+const dated = new Date()
+
+// let day = dated.getDate()
+// let month = dated.getMonth()
+// let year = dated.getFullYear()
+
+// let currentdate = `${day} / ${month} / ${year}`
+
+let currentdate = dated.getDay() + "/" + (dated.getMonth()+1) + "/" + dated.getFullYear() + " " + dated.getHours() +":"+ dated.getMinutes()
+
+date.innerHTML =  currentdate
+
+
+// function getDateTime() {
+// 	var now     = new Date(); 
+// 	var year    = now.getFullYear();
+// 	var month   = now.getMonth()+1; 
+// 	var day     = now.getDate();
+// 	var hour    = now.getHours();
+// 	var minute  = now.getMinutes();
+// 	var second  = now.getSeconds(); 
+// 	if(month.toString().length == 1) {
+// 		 month = '0'+month;
+// 	}
+// 	if(day.toString().length == 1) {
+// 		 day = '0'+day;
+// 	}   
+// 	if(hour.toString().length == 1) {
+// 		 hour = '0'+hour;
+// 	}
+// 	if(minute.toString().length == 1) {
+// 		 minute = '0'+minute;
+// 	}
+// 	if(second.toString().length == 1) {
+// 		 second = '0'+second;
+// 	}   
+// 	var dateTime = year+'/'+month+'/'+day+' '+hour+':'+minute+':'+second;   
+// 	 return dateTime;
+// }
+
+// example usage: realtime clock
+// setInterval(function(){
+// 	currentTime = getDateTime();
+// 	document.getElementById("dated").innerHTML = currentTime;
+// }, 1000);
+
+

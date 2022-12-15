@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/icon type">
   </head>
   <body>
 
@@ -33,8 +34,9 @@
 				<div class="row">
 					<div class="col-md-6 d-flex align-items-center">
 						<p class="mb-0 phone pl-md-2">
-							<a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +234 803 2482 069</a> 
-							<a href="mailto:davidomisakin4good@gmail.com "><span class="fa fa-paper-plane mr-1"></span> davidomisakin4good@gmail.com</a>
+							<a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +234 803 2482 069</a>
+							<a href="mailto:davidomisakin4good@gmail.com "><span class="fa fa-envelope mr-1"></span> davidomisakin4good@gmail.com</a>
+              <a href=""  id="dated"></a>
 						</p>
 					</div>
 					<div class="col-md-6 d-flex justify-content-md-end">
@@ -91,6 +93,8 @@
     {% block content %}
 
     {% endblock %}
+
+    
 
 
     <footer class="footer">
@@ -152,13 +156,13 @@
               <ul>
                 <!-- <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li> -->
                 <!-- <li><span class="icon"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15852.325799513645!2d3.3424303!3d6.6368069!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe6c2be6ac91deac5!2sDavidOmizz!5e0!3m2!1sen!2sng!4v1667470671039!5m2!1sen!2sng" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></span><span class="text"></span></li> -->
-                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+234 803 2482 069</span></a></li>
+                <li><a href="#"><span class="icon fa fa-phone"></span> <span class="text">+234 803 2482 069</span></a></li>
                 <li><a href="mailto:davidomisakin4good@gmail.com"><span class="icon fa fa-envelope"></span> <span class="text">davidomisakin4good@gmail.com</span></a></li>
               </ul>
             </div>
 					</div>
 				</div>
-				<div class="row mt-2">
+				<div class="row mt-1">
           <div class="col-md-12 text-center">
 
             <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
